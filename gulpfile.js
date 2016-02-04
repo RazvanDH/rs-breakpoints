@@ -11,7 +11,7 @@ gulp.task('default', ['sandbox']);
 
 gulp.task('watch', function(){
   gulp.watch([
-    'sandbox/style.css',
+    'sandbox/style.scss',
     'src/**/*'
   ], ['sandbox']);
 });

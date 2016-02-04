@@ -1,0 +1,43 @@
+@function _breakpoints-parse($string) {
+  // text to search for
+  $FROM: 'from ';
+  $TO: 'to ';
+
+
+  // convert to string
+  $string: inspect($string);
+
+
+  // flags for min and max values
+  $has-min: false;
+  $has-max: false;
+
+
+  // check what type of breakpoints we have
+  @if type-of(str-index($string, $FROM)) == number {
+    $has-min: true;
+  }
+
+  @if type-of(str-index($string, $TO)) == number {
+    $has-max: true;
+  }
+
+
+  // slice the string to retrieve min and max values for breakpoints
+  @if $has-min and $has-max {
+    $min-breakpoint: str-slice($string, str-length($FROM) + 1, str-index($string, $TO) - 2);
+    $max-breakpoint: str-slice($string, str-index($string, $TO) + str-length($TO));
+
+    @return ($min-breakpoint, $max-breakpoint);
+  } @else if $has-min == false {
+    $max-breakpoint: str-slice($string, str-length($TO) + 1);
+
+    @return (false, $max-breakpoint);
+  } @else if $has-max == false {
+    $min-breakpoint: str-slice($string, str-length($FROM) + 1);
+
+    @return ($min-breakpoint, false);
+  }
+
+  @return (false, false);
+}
