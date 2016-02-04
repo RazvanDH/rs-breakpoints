@@ -1,14 +1,14 @@
 # Easy to use breakpoints mixin
 Sass mixin for managing breakpoints inside your project with an easy to use syntax.
 
-# Instalation
-Import `breakpoints/src/index.scss` into your project
+## Instalation
+In your main Sass file, do `@import 'path/to/breakpoints/src/index.scss'`.
 
-# Usage
+## Usage
 The `breakpoints` mixin is using a "natural", plain english syntax.
 Instead of dealing with various parameters, you can just say `@include breakpoints(from 320px to 640px) { ... }`.
 
-# Predefined breakpoints
+## Predefined breakpoints
 The mixin comes with a list of predefined breakpoints to make it easier to use. There are three types of "devices" (`mobile`, `tablet`, `desktop`), each one with three sizes (`small`, `medium`, `large`). The breakpoints are a combination of the two (`mobile-small`, `desktop-large`, etc.).
 
 List of default breakpoints:
@@ -26,9 +26,9 @@ List of default breakpoints:
   desktop-large: 1400
 ```
 
-# Examples
+## Examples
 
-## 1. Between two breakpoints
+### 1. Between two breakpoints
 ```
 .example {
   @include breakpoints(from mobile-small to mobile large) {
@@ -37,7 +37,7 @@ List of default breakpoints:
 }
 ```
 
-## 2. Only a minimum breakpoint
+### 2. Only a minimum breakpoint
 ```
 .example {
   @include breakpoints(from mobile-small) {
@@ -46,7 +46,7 @@ List of default breakpoints:
 }
 ```
 
-## 3. Only a maximum breakpoint
+### 3. Only a maximum breakpoint
 ```
 .example {
   @include breakpoints(to desktop-small) {
@@ -55,9 +55,9 @@ List of default breakpoints:
 }
 ```
 
-# Advanced
+## Advanced
 
-## Custom list of breakpoints
+### Custom list of breakpoints
 If you want to define your own list of breakpoints, define a map with the name `$breakpoints-values`.
 
 Example:
@@ -75,7 +75,7 @@ $breakpoints-values: (
 }
 ```
 
-## IE8 stylesheet
+### IE8 stylesheet
 If you are building a separate stylesheet for IE8, set the variable `$breakpoints-ie8` in your IE8 onyl stylesheet after importing the mixin. This will create a stylesheet that ignores all breakpoints that have a maximum value, while dropping the media query for those who don't.
 
 Example:
@@ -90,7 +90,5 @@ $breakpoints-ie8: true;
   @include breakpoints(from mobile-small) {
     // this will be compiled in the IE8 stylesheet without the media query wrapper
   }
-
 }
-
 ```
