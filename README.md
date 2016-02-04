@@ -1,6 +1,8 @@
 # Easy to use breakpoints mixin
 Sass mixin for managing breakpoints inside your project with an easy to use syntax.
 
+![Responsive web design](https://upload.wikimedia.org/wikipedia/commons/8/81/Content-is-like-water-1980.jpg)
+
 ## Instalation
 In your main Sass file, do `@import 'path/to/breakpoints/src/index.scss'`.
 
