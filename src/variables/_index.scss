@@ -1,15 +1,15 @@
 $breakpoints-values: (
-  mobile-s: 320,
-  mobile-m: 480,
-  mobile-l: 640,
+  mobile-small: 320,
+  mobile-medium: 480,
+  mobile-large: 640,
 
-  tablet-s: 768,
-  tablet-m: 800,
-  tablet-l: 980,
+  tablet-small: 768,
+  tablet-medium: 800,
+  tablet-large: 980,
 
-  desktop-s: 1024,
-  desktop-m: 1200,
-  desktop-l: 1400
+  desktop-small: 1024,
+  desktop-medium: 1200,
+  desktop-large: 1400
 ) !default;
 
 $breakpoints-ie8: false!default;
