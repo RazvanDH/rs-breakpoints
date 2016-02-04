@@ -33,7 +33,7 @@ List of default breakpoints:
 ### 1. Between two breakpoints
 ```
 .example {
-  @include breakpoints(from mobile-small to mobile large) {
+  @include breakpoints(from mobile-small to mobile-large) {
     // your CSS here
   }
 }
