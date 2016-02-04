@@ -1,0 +1,19 @@
+{
+  "name": "breakpoints",
+  "version": "0.0.1",
+  "description": "Sass mixin for breakpoints",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RazvanDH/breakpoints.git"
+  },
+  "authors": "Razvan Spatariu <razvanspatariu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RazvanDH/breakpoints/issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.2.0"
+  }
+}
