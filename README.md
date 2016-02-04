@@ -13,17 +13,17 @@ The mixin comes with a list of predefined breakpoints to make it easier to use. 
 
 List of default breakpoints:
 ```
-  mobile-small: 320,
-  mobile-medium: 480,
-  mobile-large: 640,
+  mobile-small: 320px,
+  mobile-medium: 480px,
+  mobile-large: 640px,
 
-  tablet-small: 768,
-  tablet-medium: 800,
-  tablet-large: 980,
+  tablet-small: 768px,
+  tablet-medium: 800px,
+  tablet-large: 980px,
 
-  desktop-small: 1024,
-  desktop-medium: 1200,
-  desktop-large: 1400
+  desktop-small: 1024px,
+  desktop-medium: 1200px,
+  desktop-large: 1400px
 ```
 
 ## Examples
