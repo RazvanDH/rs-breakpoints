@@ -1,5 +1,5 @@
 # Easy to use breakpoints mixin
-Sass mixin for managing breakpoints inside your project with an simple, human-readable syntax.
+Sass mixin for managing breakpoints inside your project with a simple, human-readable syntax.
 
 ![Responsive web design](https://upload.wikimedia.org/wikipedia/commons/8/81/Content-is-like-water-1980.jpg)
 
