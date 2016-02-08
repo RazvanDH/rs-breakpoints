@@ -3,10 +3,6 @@
   $min-breakpoint: _breakpoints-values(nth($string, 1));
   $max-breakpoint: _breakpoints-values(nth($string, 2));
 
-  @if type-of($min-breakpoint) == number and type-of($max-breakpoint == number) and comparable($min-breakpoint, $max-breakpoint) and $min-breakpoint >= $max-breakpoint {
-    @error Minimum breakpoint is bigger than the maximum breakpoint - $min-breakpoint >= $max-breakpoint;
-  }
-
   @if ($min-breakpoint == false and $max-breakpoint == false) or ($max-breakpoint == false and $breakpoints-ie8) {
     @content;
   } @else if $min-breakpoint == false {
