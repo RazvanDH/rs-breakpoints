@@ -1,5 +1,5 @@
 # Easy to use breakpoints mixin
-Sass mixin for managing breakpoints inside your project with an easy to use syntax.
+Sass mixin for managing breakpoints inside your project with a simple, human-readable syntax.
 
 ![Responsive web design](https://upload.wikimedia.org/wikipedia/commons/8/81/Content-is-like-water-1980.jpg)
 
@@ -7,11 +7,10 @@ Sass mixin for managing breakpoints inside your project with an easy to use synt
 In your main Sass file, do `@import 'path/to/breakpoints/src/index.scss'`.
 
 ## Usage
-The `breakpoints` mixin is using a "natural", plain english syntax.
-Instead of dealing with various parameters, you can just say `@include breakpoints(from 320px to 640px) { ... }`.
+The `breakpoints` mixin makes use of familiar syntax from the English language, such as the adjectives `small`, `medium` and `large`. Instead of dealing with arbitrary parameters, you can write `@include breakpoints(from 320px to 640px) { ... }`.
 
 ## Predefined breakpoints
-The mixin comes with a list of predefined breakpoints to make it easier to use. There are three types of "devices" (`mobile`, `tablet`, `desktop`), each one with three sizes (`small`, `medium`, `large`). The breakpoints are a combination of the two (`mobile-small`, `desktop-large`, etc.).
+The mixin comes with a list of predefined breakpoints to make it easier to use. There are three types of "devices" (`mobile`, `tablet`, `desktop`), each one has 3 variant sizes (`small`, `medium`, `large`). The breakpoints are a combination of the two (`mobile-small`, `desktop-large`, etc.).
 
 List of default breakpoints:
 ```
@@ -78,7 +77,7 @@ $breakpoints-values: (
 ```
 
 ### IE8 stylesheet
-If you are building a separate stylesheet for IE8, set the variable `$breakpoints-ie8` in your IE8 onyl stylesheet after importing the mixin. This will create a stylesheet that ignores all breakpoints that have a maximum value, while dropping the media query for those who don't.
+If you are building a separate stylesheet for IE8, set the variable `$breakpoints-ie8` in your IE8 only stylesheet after importing the mixin. This will create a stylesheet that ignores all breakpoints that have a maximum value, while dropping the media query for those that don't.
 
 Example:
 ```
