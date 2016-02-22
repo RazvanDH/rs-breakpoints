@@ -73,5 +73,55 @@
         </div>
       </div>
     </section>
+
+
+    <section class="examples">
+      <div class="u-section">
+        <h2 class="u-title">examples</h2>
+
+
+        <div class="examples__content">
+          <div class="examples__item">
+            <h3 class="u-subtitle">custom values</h3>
+            <code class="u-code">
+              <pre>.example {
+    @include breakpoints(from 50em to 1024px) {
+      // your CSS here
+    }
+  }</pre></code>
+          </div>
+
+          <div class="examples__item">
+            <h3 class="u-subtitle">between two breakpoints</h3>
+            <code class="u-code">
+              <pre>.example {
+    @include breakpoints(from mobile-small to mobile-large) {
+      // your CSS here
+    }
+  }</pre></code>
+          </div>
+
+          <div class="examples__item">
+            <h3 class="u-subtitle">only a minimum breakpoint</h3>
+            <code class="u-code">
+              <pre>.example {
+    @include breakpoints(from mobile-small) {
+      // your CSS here
+    }
+  }</pre></code>
+          </div>
+
+          <div class="examples__item">
+            <h3 class="u-subtitle">only a maximum breakpoint</h3>
+            <code class="u-code">
+              <pre>.example {
+    @include breakpoints(to desktop-small) {
+      // your CSS here
+    }
+  }</pre></code>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

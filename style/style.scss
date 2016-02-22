@@ -63,6 +63,7 @@ strong {
   font-size: .8rem;
   padding: .5rem 1rem;
   display: inline-block;
+  text-align: left;
 }
 
 .u-code--dark {
@@ -87,6 +88,12 @@ strong {
   margin: 0 0 2rem;
 }
 
+.u-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
 
 
 // btns
@@ -210,6 +217,10 @@ strong {
   border-radius: 5px;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, .2);
   background: rgb(255, 255, 255);
+
+  @include breakpoints(to tablet-medium) {
+    margin-bottom: 2rem;
+  }
 }
 
 .predefined-breakpoints__list > * {
@@ -229,4 +240,15 @@ strong {
   border-radius: 50%;
   border: 3px solid color(cta);
   margin: 0 auto 1rem;
+}
+
+
+.examples__item {
+  width: 100%;
+  margin: 0 0 2rem;
+
+}
+
+.examples__item .u-code {
+  display: block;
 }

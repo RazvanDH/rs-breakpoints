@@ -430,7 +430,8 @@ strong {
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: .8rem;
   padding: .5rem 1rem;
-  display: inline-block; }
+  display: inline-block;
+  text-align: left; }
 
 .u-code--dark {
   color: rgba(255, 255, 255, 0.7);
@@ -449,6 +450,12 @@ strong {
   font-weight: 400;
   font-size: 2.5rem;
   margin: 0 0 2rem; }
+
+.u-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0 0 1rem; }
 
 .btn--regular {
   font-family: 'Lato', sans-serif;
@@ -556,6 +563,9 @@ strong {
   border-radius: 5px;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
   background: white; }
+  @media only screen and (max-width: 799px) {
+    .predefined-breakpoints__list {
+      margin-bottom: 2rem; } }
 
 .predefined-breakpoints__list > * {
   display: block;
@@ -573,3 +583,10 @@ strong {
   border-radius: 50%;
   border: 3px solid #e74c3c;
   margin: 0 auto 1rem; }
+
+.examples__item {
+  width: 100%;
+  margin: 0 0 2rem; }
+
+.examples__item .u-code {
+  display: block; }
