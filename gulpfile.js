@@ -1,17 +1,19 @@
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
-gulp.task('sandbox', function() {
-  gulp.src('sandbox/style.scss')
+gulp.task('style', function() {
+  gulp.src('style/style.scss')
     .pipe(gulpSass())
-    .pipe(gulp.dest('sandbox'));
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(gulp.dest('style'));
 });
 
-gulp.task('default', ['sandbox']);
+gulp.task('default', ['style']);
 
 gulp.task('watch', function(){
   gulp.watch([
-    'sandbox/style.scss',
-    'src/**/*'
-  ], ['sandbox']);
+    'style/style.scss'
+  ], ['style']);
 });

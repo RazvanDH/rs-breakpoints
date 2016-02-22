@@ -13,7 +13,11 @@
   },
   "homepage": "",
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "breakpoints": "https://github.com/RazvanDH/breakpoints.git",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.2.0"
+    "gulp-postcss": "^6.1.0",
+    "gulp-sass": "^2.2.0",
+    "normalize.css": "^3.0.3"
   }
 }

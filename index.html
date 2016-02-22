@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Sass breakpoints mixin</title>
+    <meta charset="utf-8">
+    <meta content="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1.0, user-scalable=no" />
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style/style.css" media="all">
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">breakpoints. made easy.</h1>
+        <p class="hero__tagline">Sass mixin for managing breakpoints inside your project with a simple, human-readable syntax.</p>
+        <code class="hero__code u-code">@include breakpoints(from mobile-small to desktop-large)</code>
+
+        <div class="hero__btns">
+          <a href="https://github.com/RazvanDH/breakpoints" target="_blank" class="btn--regular btn--primary icon-github">View on Github</a>
+          <a href="https://github.com/RazvanDH/breakpoints/zipball/master" class="btn--regular btn--primary icon-archive">Download .zip</a>
+          <a href="https://github.com/RazvanDH/breakpoints/tarball/master" class="btn--regular btn--primary icon-archive">Download .tar.gz</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="instalation">
+      <div class="u-section">
+        <h2 class="u-title">instalation</h2>
+        <p>After importing <span class="u-name">breakpoints</span> into your project, add this at the beginning of your main Sass file:</p>
+        <code class="u-code u-code--dark">@import 'path/to/breakpoints/src/index';</code>
+      </div>
+    </section>
+
+    <section class="usage">
+      <div class="u-section">
+        <h2 class="u-title">usage</h2>
+        <code class="u-code usage__example">@include breakpoints(from SMALL-BREAKPOINT to LARGE-BREAKPOINT)</code>
+        <small class="usage__smallprint">Where <span class="u-code u-code--inline">SMALL-BREAKPOINT</span> and <span class="u-code u-code--inline">LARGE-BREAKPOINT</span> can be a value or one of the predefined breakpoints.</small>
+
+        <p>The <span class="u-name">breakpoints</span> mixin makes use of familiar syntax from the English language, such as the prepositions <strong>from</strong> and <strong>to</strong>.
+        <p>For easier use, the mixin also comes with a list of predefined breakpoints. There are three types of "devices" (<strong>mobile</strong>, <strong>tablet</strong>, <strong>desktop</strong>), each one has 3 variant sizes (<strong>small</strong>, <strong>medium</strong>, <strong>large</strong>). The breakpoints are a combination of the two (<strong>mobile-small</strong>, <strong>desktop-large</strong>, etc.).</p>
+
+      </div>
+    </section>
+
+    <section class="predefined-breakpoints">
+      <div class="u-section">
+        <h2 class="u-title">predefined breakpoints</h2>
+        <div class="predefined-breakpoints__lists">
+          <ul class="predefined-breakpoints__list">
+            <li class="predefined-breakpoints__list-title icon-mobile"></li>
+            <li class="u-code">mobile-small</li>
+            <li class="u-code">mobile-medium</li>
+            <li class="u-code">mobile-large</li>
+          </ul>
+          <ul class="predefined-breakpoints__list">
+            <li class="predefined-breakpoints__list-title icon-tablet"></li>
+            <li class="u-code">tablet-small</li>
+            <li class="u-code">tablet-medium</li>
+            <li class="u-code">tablet-large</li>
+          </ul>
+          <ul class="predefined-breakpoints__list">
+            <li class="predefined-breakpoints__list-title icon-desktop"></li>
+            <li class="u-code">desktop-small</li>
+            <li class="u-code">desktop-medium</li>
+            <li class="u-code">desktop-large</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
