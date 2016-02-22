@@ -18,7 +18,7 @@
       <div class="hero__content u-section">
         <h1 class="hero__title">breakpoints. made easy.</h1>
         <p class="hero__tagline">Sass mixin for managing breakpoints inside your project with a simple, human-readable syntax.</p>
-        <code class="hero__code u-code"><pre>@include breakpoints(from mobile-small to desktop-large)</pre></code>
+        <code class="hero__code u-code"><pre>@include breakpoint(from mobile-small to desktop-large)</pre></code>
 
         <div class="hero__btns">
           <a href="https://github.com/RazvanDH/breakpoints" target="_blank" class="btn--regular btn--primary icon-github">View on Github</a>
@@ -39,7 +39,7 @@
     <section class="usage">
       <div class="u-section">
         <h2 class="u-title">usage</h2>
-        <code class="u-code usage__example"><pre>@include breakpoints(from SMALL-BREAKPOINT to LARGE-BREAKPOINT)</pre></code>
+        <code class="u-code usage__example"><pre>@include breakpoint(from SMALL-BREAKPOINT to LARGE-BREAKPOINT)</pre></code>
         <small class="usage__smallprint">Where <code class="u-code u-code--inline">SMALL-BREAKPOINT</code> and <code class="u-code u-code--inline">LARGE-BREAKPOINT</code> can be a value or one of the predefined breakpoints.</small>
 
         <p>The <span class="u-name">breakpoints</span> mixin makes use of familiar syntax from the English language, such as the prepositions <strong>from</strong> and <strong>to</strong>.
@@ -86,7 +86,7 @@
             <h3 class="u-subtitle">custom values</h3>
             <code class="u-code">
               <pre>.example {
-    @include breakpoints(from 50em to 1024px) {
+    @include breakpoint(from 50em to 1024px) {
       // your CSS here
     }
   }</pre></code>
@@ -96,7 +96,7 @@
             <h3 class="u-subtitle">between two breakpoints</h3>
             <code class="u-code">
               <pre>.example {
-    @include breakpoints(from mobile-small to mobile-large) {
+    @include breakpoint(from mobile-small to mobile-large) {
       // your CSS here
     }
   }</pre></code>
@@ -106,7 +106,7 @@
             <h3 class="u-subtitle">only a minimum breakpoint</h3>
             <code class="u-code">
               <pre>.example {
-    @include breakpoints(from mobile-small) {
+    @include breakpoint(from mobile-small) {
       // your CSS here
     }
   }</pre></code>
@@ -116,7 +116,7 @@
             <h3 class="u-subtitle">only a maximum breakpoint</h3>
             <code class="u-code">
               <pre>.example {
-    @include breakpoints(to desktop-small) {
+    @include breakpoint(to desktop-small) {
       // your CSS here
     }
   }</pre></code>
@@ -141,7 +141,7 @@
 );
 
 .example {
-  @include breakpoints(from i-like-small-breakpoints to weird-breakpoints) {
+  @include breakpoint(from i-like-small-breakpoints to weird-breakpoints) {
     // your CSS
   }
 }</pre></code>
@@ -155,11 +155,11 @@
           <code class="u-code u-code--dark u-full-width"><pre>$breakpoints-ie8: true;
 
 .example {
-  @include breakpoints(to desktop-small) {
+  @include breakpoint(to desktop-small) {
     // this will be ignored
   }
 
-  @include breakpoints(from mobile-small) {
+  @include breakpoint(from mobile-small) {
     // this will be compiled in the IE8 stylesheet without the media query wrapper
   }
 }</pre></code>
