@@ -1,4 +1,4 @@
-@mixin breakpoints($string) {
+@mixin breakpoint($string) {
   $string: _breakpoints-parse($string);
   $min-breakpoint: _breakpoints-values(nth($string, 1));
   $max-breakpoint: _breakpoints-values(nth($string, 2));
