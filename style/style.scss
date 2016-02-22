@@ -13,6 +13,7 @@ $colors: (
   cta-text: rgb(255, 255, 255),
   dark-background: rgb(52, 73, 94),
   dark-background-text: rgb(223, 231, 238),
+  green-background: rgb(76, 175, 80)
 );
 
 
@@ -40,6 +41,7 @@ body {
 
 a {
   transition: all 200ms ease;
+  color: color(cta);
 }
 
 strong {
@@ -56,7 +58,7 @@ strong {
 }
 
 .u-code {
-  font-family: 'Source Code Pro';
+  font-family: 'Source Code Pro', monospace;
   background: rgba(0, 0, 0, .03);
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, .1);
@@ -64,6 +66,7 @@ strong {
   padding: .5rem 1rem;
   display: inline-block;
   text-align: left;
+  max-width: 100%;
 }
 
 .u-code--dark {
@@ -74,6 +77,11 @@ strong {
 
 .u-code--inline {
   padding: .25rem;
+}
+
+.u-code pre {
+  margin: 0;
+  font-family: inherit;
 }
 
 .u-name {
@@ -95,6 +103,13 @@ strong {
   margin: 0 0 1rem;
 }
 
+.u-left {
+  text-align: left;
+}
+
+.u-full-width {
+  width: 100%;
+}
 
 // btns
 .btn--regular {
@@ -135,7 +150,7 @@ strong {
   text-align: center;
   width: 100%;
   background: color(hero-background) url(../images/hero-background.jpg) no-repeat top center;
-  min-height: 300px;
+  min-height: 250px;
   min-height: 95vh;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
@@ -144,12 +159,17 @@ strong {
 
 .hero__content {
   width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hero__title {
   margin: 0 auto .5rem;
-  max-width: 80%;
   font-size: 3rem;
+
+  @include breakpoints(to mobile-medium) {
+    font-size: 2.5rem;
+  }
 }
 
 .hero__tagline {
@@ -165,10 +185,18 @@ strong {
 .hero__btns {
   display: flex;
   justify-content: center;
+
+  @include breakpoints(to tablet-small) {
+    flex-direction: column;
+  }
 }
 
 .hero__btns > * {
   margin: 0 .5rem;
+
+  @include breakpoints(to tablet-small) {
+    margin-bottom: 1rem;
+  }
 }
 
 
@@ -183,6 +211,8 @@ strong {
 .usage__example {
   display: block;
   margin: 0 auto 1rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .usage__smallprint {
@@ -194,15 +224,17 @@ strong {
 
 .predefined-breakpoints {
   background: color(cta);
+  color: color(cta-text);
 }
 
-.predefined-breakpoints .u-title {
+.predefined-breakpoints a {
   color: color(cta-text);
 }
 
 .predefined-breakpoints__lists {
   display: flex;
   justify-content: space-around;
+  color: color(text);
 
   @include breakpoints(to tablet-medium) {
     flex-direction: column;
@@ -228,6 +260,7 @@ strong {
   border-radius: 0;
   border-bottom: 0;
   padding: 1rem;
+  text-align: center;
 }
 
 .predefined-breakpoints__list-title:before {
@@ -251,4 +284,15 @@ strong {
 
 .examples__item .u-code {
   display: block;
+}
+
+
+
+.advanced {
+  background: color(green-background);
+  color: white;
+}
+
+.advanced__custom-list {
+  margin-bottom: 3rem;
 }
