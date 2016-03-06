@@ -225,6 +225,7 @@ strong {
 .predefined-breakpoints {
   background: color(cta);
   color: color(cta-text);
+  padding-bottom: 3rem;
 }
 
 .predefined-breakpoints a {
@@ -295,4 +296,18 @@ strong {
 
 .advanced__custom-list {
   margin-bottom: 3rem;
+}
+
+.playground__iframe {
+  max-width: 90%;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.playground__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

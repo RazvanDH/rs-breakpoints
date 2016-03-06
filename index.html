@@ -10,6 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <link href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="style/style.css" media="all">
   </head>
 
@@ -32,7 +34,7 @@
       <div class="u-section">
         <h2 class="u-title">installation</h2>
         <p>After importing <span class="u-name">breakpoints</span> into your project, add this at the beginning of your main Sass file:</p>
-        <code class="u-code u-code--dark"><pre>@import 'path/to/breakpoints/src/index';</pre></code>
+        <code class="u-code u-code--dark"><pre>@import 'path/to/breakpoints/index';</pre></code>
       </div>
     </section>
 
@@ -73,13 +75,25 @@
           </ul>
         </div>
       </div>
+      <div class="u-section">
+        <h2 class="u-title">codepen playground</h2>
+        <p>Resize the window or the embeded codepen (bottom right corner) to see the mixin in action.</p>
+      </div>
+
+      <section class="playground">
+        <div class="playground__iframe js-resize">
+          <p data-height="300" data-theme-id="0" data-slug-hash="30b215603ca485a0221ca075f5421c84" data-default-tab="result" data-user="RazvanDH" class="codepen">See the Pen <a href="http://codepen.io/RazvanDH/pen/30b215603ca485a0221ca075f5421c84/">Example file for breakpoint mixin</a> by Razvan Spatariu (<a href="http://codepen.io/RazvanDH">@RazvanDH</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+           <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          <div class="playground__cover js-cover"></div>
+        </div>
+      </section>
+
     </section>
 
 
     <section class="examples">
       <div class="u-section u-left">
         <h2 class="u-title">examples</h2>
-
 
         <div class="examples__content">
           <div class="examples__item">
@@ -123,6 +137,7 @@
           </div>
         </div>
       </div>
+
     </section>
 
     <section class="advanced">
@@ -167,4 +182,30 @@
       </div>
     </section>
   </body>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+    $(".js-resize").each(function() {
+
+      var el = $(this);
+      var height = 300;
+      var $cover = el.find("> .js-cover");
+      $cover.hide();
+
+      el.resizable({
+        minHeight: height,
+        maxHeight: height,
+        minWidth: 320,
+        start: function() {
+          $cover.show();
+        },
+        stop: function() {
+          $cover.hide();
+        }
+      });
+    });
+
+  </script>
 </html>
