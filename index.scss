@@ -1,0 +1,163 @@
+$breakpoints-values: (
+  mobile-small: 320,
+  mobile-medium: 480,
+  mobile-large: 640,
+
+  tablet-small: 768,
+  tablet-medium: 800,
+  tablet-large: 980,
+
+  desktop-small: 1024,
+  desktop-medium: 1200,
+  desktop-large: 1400
+) !default;
+
+$breakpoints-ie8: false!default;
+
+@function _breakpoints-parse($string) {
+  // text to search for
+  $FROM: 'from ';
+  $TO: 'to ';
+
+
+  // convert to string
+  $string: inspect($string);
+
+
+  // flags for min and max values
+  $has-min: false;
+  $has-max: false;
+
+
+  // check what type of breakpoints we have
+  @if type-of(str-index($string, $FROM)) == number {
+    $has-min: true;
+  }
+
+  @if type-of(str-index($string, $TO)) == number {
+    $has-max: true;
+  }
+
+
+  // slice the string to retrieve min and max values for breakpoints
+  @if $has-min and $has-max {
+    $min-breakpoint: str-slice($string, str-length($FROM) + 1, str-index($string, $TO) - 2);
+    $max-breakpoint: str-slice($string, str-index($string, $TO) + str-length($TO));
+
+    @return ($min-breakpoint, $max-breakpoint);
+  } @else if $has-min == false {
+    $max-breakpoint: str-slice($string, str-length($TO) + 1);
+
+    @return (false, $max-breakpoint);
+  } @else if $has-max == false {
+    $min-breakpoint: str-slice($string, str-length($FROM) + 1);
+
+    @return ($min-breakpoint, false);
+  }
+
+  @return (false, false);
+}
+
+@function _string-to-number($string) {
+  // inspired by http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+
+  $digits: '0123456789';
+  $number: 0;
+  $negative: false;
+  $units: (
+    '%': 1%,
+    'ch': 1ch,
+    'cm': 1cm,
+    'em': 1em,
+    'ex': 1ex,
+    'in': 1in,
+    'mm': 1mm,
+    'pc': 1pc,
+    'pica': 1pica,
+    'pt': 1pt,
+    'px': 1px,
+    'rem': 1rem,
+    'vmax': 1vmax,
+    'vmin': 1vmin,
+    'vh': 1vh,
+    'vw': 1vw
+  );
+  $unit: null;
+
+  // is it negative?
+  @if str-index($string, '-') == 1 {
+    $negative: true;
+    $string: str-slice($string, 2);
+  }
+
+  // parse the string and map it to the indexes of $digits
+  @for $i from 1 through str-length($string) {
+    $digit: str-slice($string, $i, $i);
+    $index: str-index($digits, $digit);
+
+    @if type-of($index) == number {
+      $number: $number * 10 + ($index - 1);
+    } @else {
+      $unit: $unit#{$digit};
+    }
+  }
+
+  @if $negative {
+    $number: $number * (-1);
+  }
+
+  @if $unit and map-has-key($units, $unit) {
+    $number: $number * map-get($units, $unit);
+  }
+
+  @if $string == $unit {
+    @return false;
+  }
+
+  @return $number;
+}
+
+@function _breakpoints-values($value) {
+  // try to get the value from the pre-existing breakpoints
+  @if map-has-key($breakpoints-values, $value) {
+    $value: map-get($breakpoints-values, $value);
+    @if unitless($value) {
+      $value: $value * 1px;
+    }
+  }
+
+  @if type-of($value) == string {
+    $value: _string-to-number($value);
+  }
+
+  @if type-of($value) != number {
+    @return false;
+  }
+
+  @return $value;
+}
+
+
+@mixin breakpoint($string) {
+  $string: _breakpoints-parse($string);
+  $min-breakpoint: _breakpoints-values(nth($string, 1));
+  $max-breakpoint: _breakpoints-values(nth($string, 2));
+
+  @if ($min-breakpoint == false and $max-breakpoint == false) or ($max-breakpoint == false and $breakpoints-ie8) {
+    @content;
+  } @else if $min-breakpoint == false {
+    @media only screen and (max-width: $max-breakpoint - 1) {
+      @content;
+    }
+  } @else if $max-breakpoint == false {
+    @media only screen and (min-width: $min-breakpoint) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint - 1) {
+      @content;
+    }
+  }
+}
+
+
