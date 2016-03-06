@@ -5,12 +5,12 @@
   "main": "index.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RazvanDH/breakpoints.git"
+    "url": "https://github.com/RazvanDH/rs-breakpoints.git"
   },
   "authors": "Razvan Spatariu <razvanspatariu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RazvanDH/breakpoints/issues"
+    "url": "https://github.com/RazvanDH/rs-breakpoints/issues"
   },
   "homepage": "",
   "devDependencies": {
