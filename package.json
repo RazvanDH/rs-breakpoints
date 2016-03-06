@@ -1,6 +1,6 @@
 {
   "name": "rs-breakpoints",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sass mixin for breakpoints",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "homepage": "",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
-    "breakpoints": "https://github.com/RazvanDH/rs-breakpoints.git",
+    "rs-breakpoints": "^0.0.4",
     "gulp": "^3.9.0",
     "gulp-postcss": "^6.1.0",
     "gulp-sass": "^2.2.0",
