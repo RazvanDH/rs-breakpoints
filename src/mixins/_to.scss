@@ -1,0 +1,5 @@
+@mixin to($media-query) {
+  @include breakpoint(to $media-query) {
+    @content;
+  };
+}

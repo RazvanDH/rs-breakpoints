@@ -137,16 +137,30 @@ $breakpoints-ie8: false!default;
   @return $value;
 }
 
+@function _set-max-breakpoint($max-breakpoint) {
+  @if $max-breakpoint != false {
+    @if unit($max-breakpoint) == px {
+      $max-breakpoint: $max-breakpoint - 1;
+    } @else {
+      $max-breakpoint: $max-breakpoint;
+    }
+  }
+
+  @return $max-breakpoint;
+}
+
 
 @mixin breakpoint($string) {
   $string: _breakpoints-parse($string);
   $min-breakpoint: _breakpoints-values(nth($string, 1));
   $max-breakpoint: _breakpoints-values(nth($string, 2));
 
+  $max-breakpoint: _set-max-breakpoint($max-breakpoint);
+
   @if ($min-breakpoint == false and $max-breakpoint == false) or ($max-breakpoint == false and $breakpoints-ie8) {
     @content;
   } @else if $min-breakpoint == false {
-    @media only screen and (max-width: $max-breakpoint - 1) {
+    @media only screen and (max-width: $max-breakpoint) {
       @content;
     }
   } @else if $max-breakpoint == false {
@@ -154,10 +168,24 @@ $breakpoints-ie8: false!default;
       @content;
     }
   } @else {
-    @media only screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint - 1) {
+    @media only screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint) {
       @content;
     }
   }
+}
+
+
+// require breakpoint
+@mixin to($media-query) {
+  @include breakpoint(to $media-query) {
+    @content;
+  };
+}
+
+@mixin from($media-query) {
+  @include breakpoint(from $media-query) {
+    @content;
+  };
 }
 
 

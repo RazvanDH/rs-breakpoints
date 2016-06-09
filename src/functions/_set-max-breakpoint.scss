@@ -1,0 +1,11 @@
+@function _set-max-breakpoint($max-breakpoint) {
+  @if $max-breakpoint != false {
+    @if unit($max-breakpoint) == px {
+      $max-breakpoint: $max-breakpoint - 1;
+    } @else {
+      $max-breakpoint: $max-breakpoint;
+    }
+  }
+
+  @return $max-breakpoint;
+}
