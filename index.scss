@@ -188,4 +188,10 @@ $breakpoints-ie8: false!default;
   };
 }
 
+@mixin from-to($min, $max) {
+  @include breakpoint(from $min to $max) {
+    @content;
+  };
+}
+
 

@@ -1,0 +1,5 @@
+@mixin from-to($min, $max) {
+  @include breakpoint(from $min to $max) {
+    @content;
+  };
+}
