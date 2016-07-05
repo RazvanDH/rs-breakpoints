@@ -3,10 +3,12 @@
   $min-breakpoint: _breakpoints-values(nth($string, 1));
   $max-breakpoint: _breakpoints-values(nth($string, 2));
 
+  $max-breakpoint: _set-max-breakpoint($max-breakpoint);
+
   @if ($min-breakpoint == false and $max-breakpoint == false) or ($max-breakpoint == false and $breakpoints-ie8) {
     @content;
   } @else if $min-breakpoint == false {
-    @media only screen and (max-width: $max-breakpoint - 1) {
+    @media only screen and (max-width: $max-breakpoint) {
       @content;
     }
   } @else if $max-breakpoint == false {
@@ -14,7 +16,7 @@
       @content;
     }
   } @else {
-    @media only screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint - 1) {
+    @media only screen and (min-width: $min-breakpoint) and (max-width: $max-breakpoint) {
       @content;
     }
   }
