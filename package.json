@@ -15,8 +15,8 @@
   "homepage": "",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-shopify-sass": "^0.1.2",
-    "vinyl-file": "^2.0.0"
+    "gulp-sass": "^4.0.1",
+    "gulp-shopify-sass": "^0.4.1",
+    "vinyl-file": "^3.0.0"
   }
 }
