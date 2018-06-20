@@ -38,7 +38,7 @@
     @if type-of($index) == number {
       $number: $number * 10 + ($index - 1);
     } @else {
-      $unit: $unit#{$digit};
+      $unit: unquote("#{$unit}#{$digit}");
     }
   }
 
