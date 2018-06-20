@@ -98,7 +98,7 @@ $breakpoints-ie8: false!default;
     @if type-of($index) == number {
       $number: $number * 10 + ($index - 1);
     } @else {
-      $unit: $unit#{$digit};
+      $unit: unquote("#{$unit}#{$digit}");
     }
   }
 
@@ -149,7 +149,6 @@ $breakpoints-ie8: false!default;
   @return $max-breakpoint;
 }
 
-
 @mixin breakpoint($string) {
   $string: _breakpoints-parse($string);
   $min-breakpoint: _breakpoints-values(nth($string, 1));
@@ -174,7 +173,6 @@ $breakpoints-ie8: false!default;
   }
 }
 
-
 // require breakpoint
 @mixin to($media-query) {
   @include breakpoint(to $media-query) {
@@ -193,5 +191,3 @@ $breakpoints-ie8: false!default;
     @content;
   };
 }
-
-
